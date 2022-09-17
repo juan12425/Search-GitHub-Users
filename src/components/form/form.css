@@ -1,0 +1,30 @@
+#form-div{
+    display: flex;
+    justify-content: center;
+    margin: 5rem 0;
+}
+
+form{
+    width: 40%;
+}
+
+form input, form button{
+    width: 100%;
+}
+
+form input{
+    height: 2rem;
+    border-radius: 10px;
+    border: solid rgb(194, 194, 194) 1px;
+}
+
+form button{
+    font-size: 1.2rem;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,118,0.9457983877144608) 15%, rgba(0,212,255,1) 100%); 
+    border: none;
+    padding: 0.3rem;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 10px 10px 10px black;
+}

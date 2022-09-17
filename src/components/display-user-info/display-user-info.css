@@ -1,0 +1,39 @@
+#div-display{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 5rem 0;
+    align-items: center;
+    
+    
+}
+
+#div-display ul{
+    list-style: none;
+    font-family: 'Nunito', sans-serif;
+    background: rgba(0, 135, 255, 0.89);
+    margin: 0 1.5rem;
+    padding: 1rem;
+    color: white;
+    
+}
+
+#div-display li{
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+#user-info-title{
+    width: 100%;
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 5rem auto;
+    background: rgb(255, 196, 0);
+    width: 60%;
+    padding: 1rem;
+    font-family: Oswald, sans-serif;
+}
+
+#div-display a{
+    color: #2cff00;
+}
