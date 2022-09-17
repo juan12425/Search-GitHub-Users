@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import {DisplayUserInfo} from '../display-user-info/display-user-info'
 import {defaultUserInfo} from './default-user-info';
+import './form.css';
 
 export function Form()
 {
@@ -43,10 +44,13 @@ export function Form()
 
     return(
         <div>
-            <form onSubmit={handleFormSubmit}>
-                <input id="user-name-input" type="text" placeholder="Introduce Username" onKeyUp={handleInputUserName} />
-                <button>Search User</button>
-            </form>
+            <div id="form-div">
+                <form onSubmit={handleFormSubmit}>
+                        <input id="user-name-input" type="text" placeholder="Introduce Username" onKeyUp={handleInputUserName} /><br/><br/>
+                        <button>Search User</button>
+                </form>
+                
+            </div>
             <DisplayUserInfo data={userData}/>
         </div>
     );
