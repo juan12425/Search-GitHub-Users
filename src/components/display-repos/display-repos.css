@@ -1,0 +1,26 @@
+#repos-title
+{
+    font-size: 2rem;
+    text-align: center;
+}
+
+#div-repos{
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+    
+}
+
+#div-repos ul{
+    list-style-type: none;
+    margin: 2rem 0;
+}
+
+ul li{
+    margin: 0.5rem 0;
+}
+
+h3{
+    text-align: center;
+    margin: 4rem 0;
+}
