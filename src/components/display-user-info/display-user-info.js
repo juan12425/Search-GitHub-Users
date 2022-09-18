@@ -1,7 +1,11 @@
 import "./display-user-info.css";
+import {DisplayRepos} from "../display-repos/display-repos";
+import {useState} from "react";
 
 export function DisplayUserInfo(props)
-{
+{   
+    const [reposData, setReposData]=useState("No Data");
+
     let display="";
 
     if(props.data != "No Data")
@@ -25,6 +29,24 @@ export function DisplayUserInfo(props)
         const updatedAt=props.data.updated_at;
         const reposURL=props.data.repos_url;
 
+        async function fetchReposInfo()
+        {
+            const reposResponseJSON=await fetch(reposURL);
+            const response=await reposResponseJSON.json();
+
+            return response;
+        }
+
+        function handleReposInfoDisplay()
+        {
+            fetchReposInfo().then(response=>{
+                console.log(response);
+                setReposData(()=>response);
+
+            }).catch(error=>console.log(error));
+        }
+
+
         display=<div>
                 <h2 id="user-info-title">{username}</h2>
                 <div id="div-display">
@@ -40,7 +62,7 @@ export function DisplayUserInfo(props)
                     {email && <li>Email: {email}</li>}
                     {hireable && <li>Hireable: {hireable}</li>}
                     {twitterUsername && <li>Twitter Username: {twitterUsername}</li>}
-                    <li><a href="#" target="_blank">Public Repos</a>: {publicRepos}</li>
+                    <li><a href="#" onClick={handleReposInfoDisplay}>Public Repos</a>: {publicRepos}</li>
                     <li>Public Gists: {publicGists}</li>
                     <li>Followers: {followers}</li>
                     <li>Following: {following}</li>
@@ -50,5 +72,10 @@ export function DisplayUserInfo(props)
             </div> 
         </div>   
     }
-    return display;
+    return (
+        <div>
+            {display}
+            <DisplayRepos data={reposData}/>
+        </div>
+        );
 }
