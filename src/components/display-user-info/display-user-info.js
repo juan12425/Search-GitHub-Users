@@ -1,12 +1,16 @@
 import "./display-user-info.css";
 import {DisplayRepos} from "../display-repos/display-repos";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 export function DisplayUserInfo(props)
 {   
     const [reposData, setReposData]=useState("No Data");
 
     let display="";
+
+    useEffect(()=>{
+        setReposData("No Data");
+    }, [props])
 
     if(props.data != "No Data")
     {
