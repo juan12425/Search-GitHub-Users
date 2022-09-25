@@ -7,7 +7,7 @@ export function Form()
 {
     const [userName, setUserName]=useState("No Username");
     const [userData, setUserData]=useState(defaultUserInfo);
-    
+
     async function getUser(userToFetch)
     {
         const endpoint="https://api.github.com/users/"+userToFetch;
@@ -46,7 +46,7 @@ export function Form()
         <div>
             <div id="form-div">
                 <form onSubmit={handleFormSubmit}>
-                        <input id="user-name-input" type="text" placeholder="Introduce Username" onKeyUp={handleInputUserName} /><br/><br/>
+                        <input id="user-name-input" type="text" placeholder="Introduce Username" onChange={handleInputUserName} /><br/><br/>
                         <button>Search User</button>
                 </form>
                 

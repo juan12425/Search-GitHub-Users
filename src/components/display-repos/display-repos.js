@@ -6,7 +6,7 @@ export function DisplayRepos(props){
     if(props.data != 'No Data')
     {
         display=<div>
-            {props.data.map(repo=>{
+            {props.data.map((repo, index)=>{
                 let repoName=repo.name;
                 let archived=repo.archived;
                 let defaultBranch=repo.default_branch;
@@ -26,7 +26,7 @@ export function DisplayRepos(props){
                 let url=repo.svn_url;
 
                 return(
-                    <div>
+                    <div key={index}>
                         <h3>{repoName}</h3>
                         <ul>
                             <li key="1">Default Branch: {defaultBranch}</li>

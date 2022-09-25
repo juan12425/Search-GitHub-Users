@@ -37,3 +37,11 @@
 #div-display a{
     color: rgb(255, 196, 0);
 }
+
+@media only screen and (max-width: 1000px) {
+    #div-display ul
+    {
+        margin: 5rem 0;
+       
+    }
+}
